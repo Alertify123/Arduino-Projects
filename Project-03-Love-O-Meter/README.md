@@ -1,4 +1,4 @@
-# Project 3: Love-O-Meter
+# Project 03: Love-O-Meter
 
 This project measures your body temperature using an analog sensor and visually displays "how hot" you are using a set of three LEDs. It is based on **Project 03** from the [Arduino Projects Book](https://www.eitkw.com/wp-content/uploads/2020/03/Arduino_Projects_Book.pdf).
 
