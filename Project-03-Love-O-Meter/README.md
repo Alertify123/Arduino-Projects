@@ -51,4 +51,39 @@ The LEDs light up based on how far the temperature rises above the `baselineTemp
 * **28°C - 30°C:** 2 LEDs ON (Pins 2 & 3).
 * **> 30°C:** 3 LEDs ON (Pins 2, 3 & 4).
 
-  
+<h3>The Logic & The Demo</h3>
+<table>
+  <tr>
+    <th width="50%">The Logic (Snippet)</th>
+    <th width="50%">The Demo</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>The code checks if the temperature exceeds the baseline. As it gets hotter, we turn on more digital pins.</p>
+      <pre lang="cpp">
+// Logic Control for LEDs
+if(temperature < baselineTemp){
+  // Cold: All OFF
+  digitalWrite(2, LOW);
+  digitalWrite(3, LOW);
+  digitalWrite(4, LOW);
+} else if (temperature >= baselineTemp + 2 && 
+           temperature < baselineTemp + 4){
+  // Warm: 1 LED ON
+  digitalWrite(2, HIGH);
+  digitalWrite(3, LOW);
+  digitalWrite(4, LOW);
+} else if (temperature >= baselineTemp + 6){
+  // Hot: All ON
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  digitalWrite(4, HIGH);
+}</pre>
+    </td>
+    <td valign="top">
+      <br>
+      <video src="https://github.com/user-attachments/assets/e8a22688-aad1-4287-a9a9-3ab94e8411dd" controls="controls" style="max-width: 100%;">
+      </video>
+    </td>
+  </tr>
+</table>  
