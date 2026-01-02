@@ -1,5 +1,5 @@
 const int sensorPin = A0;
-const float baselineTemp = 27.0; // room specific (winter time, so heating effect)
+const float baselineTemp = 24.0; // room specific (winter time, so heating effect)
 
 
 void setup() {
