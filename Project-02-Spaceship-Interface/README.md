@@ -29,3 +29,5 @@ switchState = digitalRead(2); // Checks if voltage is present
 The code uses an if/else statement to determine which mode the ship is in:
 * **if (switchState == LOW):** Green LED acts as a "Ready" indicator.
 * **else:** The delay(250) function creates a simple blinking animation for the Red LEDs.
+
+https://github.com/user-attachments/assets/8addf695-d783-4024-8d30-ab2893f28854
