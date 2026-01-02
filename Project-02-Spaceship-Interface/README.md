@@ -30,4 +30,42 @@ The code uses an if/else statement to determine which mode the ship is in:
 * **if (switchState == LOW):** Green LED acts as a "Ready" indicator.
 * **else:** The delay(250) function creates a simple blinking animation for the Red LEDs.
 
-https://github.com/user-attachments/assets/8addf695-d783-4024-8d30-ab2893f28854
+<table>
+  <tr>
+    <th width="50%">The Logic (Snippet)</th>
+    <th width="50%">The Demo</th>
+  </tr>
+  <tr>
+    <td valign="top">
+<pre>
+// Check if button is pressed
+switchState = digitalRead(2);
+
+if(switchState == LOW){
+  // Button NOT pressed
+  // Green LED ON
+  digitalWrite(3, HIGH); 
+  digitalWrite(4, LOW);
+  digitalWrite(5, LOW);
+}
+else{
+  // Button IS pressed
+  // Toggle Red LEDs
+  digitalWrite(3, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(5, HIGH);
+  
+  delay(250); // Wait
+  
+  digitalWrite(4, HIGH);
+  digitalWrite(5, LOW);
+  delay(250); // Wait
+}
+</pre>
+    </td>
+    <td valign="top">
+      <video src="https://github.com/user-attachments/assets/8addf695-d783-4024-8d30-ab2893f28854" controls="controls" style="max-width: 100%;">
+      </video>
+    </td>
+  </tr>
+</table>
