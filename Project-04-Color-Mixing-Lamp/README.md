@@ -63,3 +63,36 @@ Even though the Arduino is a digital device (on/off), we can simulate analog "fa
 * **0:** Always off (0V)
 * **127:** On 50% of the time (approx 2.5V)
 * **255:** Always On (5V)
+
+<h3>The Logic & The Demo</h3>
+<table>
+  <tr>
+    <th width="50%">The Logic (Snippet)</th>
+    <th width="50%">The Demo</th>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>The code reads the light sensors (0-1023) and divides by 4 to map them to the LED's PWM range (0-255).</p>
+      <pre lang="cpp">
+// 1. Read the Sensor
+redSensorValue = analogRead(redSensorPin);
+delay(5);
+
+// 2. The Math (Map to 0-255)
+// 1023 / 4 = ~255
+redValue = redSensorValue / 4;
+greenValue = greenSensorValue / 4;
+blueValue = blueSensorValue / 4;
+
+// 3. Change the Light
+analogWrite(redLEDPin, redValue);
+analogWrite(greenLEDPin, greenValue);
+analogWrite(blueLEDPin, blueValue);</pre>
+    </td>
+    <td valign="top">
+      <br>
+      <video src="https://github.com/user-attachments/assets/816100aa-e075-41d9-8095-c8f0a25fa589" controls="controls" style="max-width: 100%;">
+      </video>
+    </td>
+  </tr>
+</table>
